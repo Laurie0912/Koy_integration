@@ -1,50 +1,171 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 
+html,
 body {
   font-family: "Ubuntu";
+  margin: 0;
 }
 
-/* Header */
+/*      HEADER      */
+
+/* Menu burger */
+.menu-container {
+  display: block;
+  position: relative;
+  top: 3px;
+  left: 5px;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.menu-container a {
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+/* menu category hover */
+.menu-container a:hover {
+  color: tomato;
+}
+
+.menu-container input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+
+  -webkit-touch-callout: none;
+}
+
+/* visuel burger */
+.menu-container span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #ffffff;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+.menu-container span:first-child {
+  transform-origin: 0% 0%;
+}
+
+.menu-container span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* Animation */
+.menu-container input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+.menu-container input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.menu-container input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+.menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+.menu-container input:checked ~ ul {
+  transform: none;
+}
+
+/* Fin burger */
+
 .header {
-  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  width: 100%;
+  height: 34px;
+  z-index: 3;
   background-color: #fe5f55;
   padding: 5px 5px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
 }
-
-
-
-.header-right div {
-  padding: 5px;
+.headertoggle {
+  opacity: 0;
 }
 
-.profil { 
-border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  background-image: url(pp.jpg);
-}
-
-/*background color on mouse-over */
-.header a:hover {
-  background-color: #ddd;
-  color: black;
+.logo {
+  margin: auto;
 }
 
 .header-categories {
   background-color: rgb(123, 185, 185);
   display: flex;
+  margin-left: 5px;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   width: 25%;
 }
 
+.profil {
+  background-color: #eeafab;
+  display: flex;
+}
 
+.profil img {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
 
 .main_container {
+  margin-top: 45px;
+  padding: 6px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -55,29 +176,53 @@ border-radius: 50%;
 /* Carte recette  */
 
 .card-content {
-    background-color: cornflowerblue;
+  background-color: rgb(139, 151, 104);
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 .card {
-  background-color: #F9EEE7;
-  padding: 20px 20px;
+  background-color: #f9eee7;
+  padding: 20px;
   margin-top: 15px;
   border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 10px rgba(80, 51, 36, 0.418);
   width: 80%;
-  height: 370px;
+  height: auto;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 
 
-.video {
-  background-color: rgb(196, 160, 114);
-  height: auto;
-  margin-top: 10px;
+ .video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+height: fit-content;
+ margin-top: 10px;
+  background-color: aquamarine;
+  position: relative;
+  max-width: 450px;
+}
+
+.video img {
+    width: 100%;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgb(53, 34, 15);
+}
+
+.video svg {
+    position: absolute;
+    top:50px
+
+
 }
 
 /* Infos sur la recette */
@@ -85,16 +230,18 @@ border-radius: 50%;
 .infos_container {
   background-color: rgb(252, 164, 164);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
+  margin-top: 15px;
 }
 
 .details_container {
   background-color: aquamarine;
   display: flex;
+ justify-content: center;
   flex-direction: column;
-  justify-content: ;
- 
+  justify-self: center;
+  gap: 10px
 }
 
 .details {
@@ -106,30 +253,52 @@ border-radius: 50%;
 }
 
 .details span {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 .card h2 {
-  margin: 5px;
+  margin-bottom: 5px;
 }
 
-.bar {
-    width: 80%;
+.progress-bar {
+  position: relative;
+  width: 100%;
+  height: 11px;
+  background-color: #e1e1e1;
+  border-radius: 1.5em;
 }
-.jauge {
-    display: flex;
-    flex-direction: row;
+
+.progress-bar::before {
+  content: attr(data-label);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0.2px;
+
+  bottom: 5px;
+  width: calc(var(--width, 0) * 1%);
+  min-width: 2rem;
+  max-width: calc(100% - 1em);
+  background-color: #fe5f55;
+  border-radius: 1em;
+  padding: 5.4px;
 }
 
 .jauges_container {
   background-color: rgb(141, 141, 141);
   width: 60%;
+  padding: 5px;
 }
 
 .jauges_container div {
   display: flex;
   flex-direction: column;
   font-size: 14px;
+
+}
+
+.jauge{
+    margin-top: 2px;
 }
 
 .jauges_container span {
@@ -140,42 +309,41 @@ border-radius: 50%;
   margin-top: 50px;
   display: flex;
   flex-direction: row;
-  background-color: rgb(245, 207, 83);
+  background-color: rgb(255, 255, 255);
   width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.fish{
+    margin-left: 4px;
+
 }
 
 .box {
-    width: 70%;
-    margin: auto;
-    background: #DCFFE3;
-    padding: 10px;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    position: relative;
-    border-radius: 10px;
-    min-height: 100px; 
-  }
-  
-  
-  .sb1:before {
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    border-left: 10px solid transparent;
-    border-right: 10px solid #DCFFE3;
-    border-top: 10px solid #DCFFE3;
-    border-bottom: 10px solid transparent;
-    left: -19px;
-    top: 80px;
-  }
+  width: 70%;
+  margin: auto;
+  background: #dcffe3;
+  padding: 10px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  position: relative;
+  border-radius: 10px;
+  min-height: 100px;
+}
 
-
-
-
-
-
-  
+.sb1:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #dcffe3;
+  border-top: 10px solid #dcffe3;
+  border-bottom: 10px solid transparent;
+  left: -19px;
+  top: 80px;
+}
 
 /* .bubulle {
   background-color: aqua;
@@ -210,7 +378,6 @@ border-radius: 50%;
   margin: 0px;
   border: 0px none;
   margin-left: auto;
-
 }
 
 .prs_btn_container button {
@@ -245,21 +412,25 @@ border-radius: 50%;
 }
 
 .ing_card {
-  width: 70px;
+  width: 65px;
   height: 70px;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
   border-radius: 15px;
   margin-top: 10px;
-
 }
 
 .ing_img {
-    display: flex;
-    justify-content: center;
-    margin-block: auto;
-    
+  display: flex;
+  justify-content: center;
+  margin-block: auto;
+}
+
+.ing_img {
+  width: 36px;
+  height: 36px;
+  margin: auto;
 }
 
 .quantity {
@@ -268,7 +439,8 @@ border-radius: 50%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  line-height: 15px;
+  font-size: 13px;
   width: 100%;
   height: 40%;
   border-radius: 0 0 15px 15px;
@@ -307,20 +479,83 @@ border-radius: 50%;
 
 /* bouton  */
 
-.btns { 
-    background-color: #eeafab;
-    margin-top: 30px;
-    width: 95%;
-    display: flex;
-    gap: 14px; 
+.btns {
+  background-color: #eeafab;
+  margin-top: 30px;
+  width: 95%;
+  display: flex;
+  gap: 14px;
 }
 
 .btns button {
-    padding: 12px 20px 12px 20px;
-    background-color: #fe5f55;
-    border: 0px none;
-    border-radius: 20px ;
-    flex-grow: 1;   
+  padding: 12px 20px 12px 20px;
+  background-color: #fe5f55;
+  border: 0px none;
+  border-radius: 20px;
+  flex-grow: 1;
+}
+
+
+.large-screen-details{
+    display: none;
     
+}
+
+
+/* RESPONSIVE */
+
+@media (min-width: 820px) {
+
+.main_container {padding-left: 18px;
+    padding-right: 14px;}
+
+
+.card-content {
+display: flex;
+flex-direction: row;
+margin-top: 20px;
+height: 60%;
+justify-content: space-between;
+align-items: center;
+}
+
+.infos_container{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    gap: 15px
+   
+}
+
+.details_container{
+    display: none;
+
+}
+
+.large-screen-details{
+    display: flex;
+    flex-direction: row;
+    background-color: #dcffe3;
+    width: 95%;
     
+}
+
+.video{display: flex;
+align-items: center;
+width:fit-content;
+height: fit-content;
+}
+
+.video img {
+    width: 355px;
+}
+
+.jauges_container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    order: 1;
+}
+
+
 }
