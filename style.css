@@ -1,9 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"); */
+
+
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./font/Ubuntu-Bold.woff"), url("./font/Ubuntu-Bold.woff2");
+  font-weight: bold;
+}
+
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./font/Ubuntu-Italic.woff"), url("./font/Ubuntu-Light.woff2");
+  font-weight: italic;
+}
+
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./font/Ubuntu-Regular.woff"), url("./font/Ubuntu-Regular.woff2");
+}
+
+
 
 html,
 body {
   font-family: "Ubuntu";
   margin: 0;
+
 }
 
 /*      HEADER      */
@@ -152,7 +176,14 @@ left: calc(50% - 36px);
 cursor: pointer;
 }
 
-.note img {width:68px}
+.logo img {
+  width: 62px;
+  height: 35px;
+
+}
+
+.note img {width:68px;
+height:12px}
 
 .note span{
   margin-left: 4px;
@@ -222,6 +253,10 @@ cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.card h2{
+  font-weight: 600;
 }
 
 .video {
@@ -367,12 +402,22 @@ font-size: 14px;
 
 }
 
+.txt h2 {
+  display: none;
+}
+
 .txt p {
   margin: 0%;
 }
 
 .fish {
   margin-left: 2%;
+
+}
+
+.fish img {
+ width: 64px;
+ height:90px;
 
 }
 
