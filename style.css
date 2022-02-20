@@ -6,6 +6,8 @@
   font-family: "Ubuntu";
   src: url("./font/Ubuntu-Bold.woff"), url("./font/Ubuntu-Bold.woff2");
   font-weight: bold;
+  font-display: swap;
+  font-weight: 600;
 }
 
 
@@ -13,12 +15,16 @@
   font-family: "Ubuntu";
   src: url("./font/Ubuntu-Italic.woff"), url("./font/Ubuntu-Light.woff2");
   font-weight: italic;
+  font-display: swap;
+  font-weight: 300;
 }
 
 
 @font-face {
   font-family: "Ubuntu";
   src: url("./font/Ubuntu-Regular.woff"), url("./font/Ubuntu-Regular.woff2");
+  font-display: swap;
+  font-weight: 400;
 }
 
 
@@ -36,8 +42,8 @@ body {
 .menu-container {
   display: block;
   position: relative;
-  top: 3px;
-  left: 5px;
+  top: -6px;
+  left: 6px;
 
   z-index: 1;
 
@@ -45,7 +51,14 @@ body {
   user-select: none;
 }
 
+#menu-icone{
+  top: 12px;
+  position: absolute;
+}
 
+.menu-container label{
+visibility: hidden;
+}
 
 .menu-container a {
   text-decoration: none;
@@ -271,6 +284,8 @@ cursor: pointer;
 .video img {
   width: 100%;
   height: auto;
+  max-width: 450px;
+  max-height: 240px;
   border-radius: 10px;
   box-shadow: 0 4px 8px #61433285;
 }
@@ -375,13 +390,10 @@ font-size: 14px;
 
 }
 
-.jauge-nb span{
-  display: none;
+
+
+.jauge-nb span{display: none;
   flex-direction: row;
-
-}
-
-.jauge-nb span{
   margin-left: 4px;
   font-size: 12px;
   font-weight: lighter;
@@ -991,7 +1003,7 @@ width: 60%;}
 
 .jauge-nb span{
   display: flex;
-width: 77px;
+width: 92px;
 }
 
 
@@ -1035,7 +1047,7 @@ width: 77px;
  
 
   .video img {
-   min-width: 340px;
+   min-width: 350px;
     height: auto;
   }
 
