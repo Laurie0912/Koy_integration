@@ -45,9 +45,7 @@ body {
   user-select: none;
 }
 
-.menu-container label{
-display: none;
-}
+
 
 .menu-container a {
   text-decoration: none;
