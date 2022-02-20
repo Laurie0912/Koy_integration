@@ -1097,7 +1097,7 @@ body {
   }
 
   .card-content {
-    margin-top: 0px;
+    margin-top: 10px;
     height: 55%;
   }
 
@@ -1106,6 +1106,10 @@ body {
     padding: 30px;
     height: 550px;
   }
+
+  .progress-bar {
+  
+    height: 12px;}
 
   .card h2 {
     font-size: 32px;
@@ -1118,6 +1122,11 @@ body {
   .btn {
     margin-top: 30px;
     margin-bottom: 0px;
+  }
+
+  .video img {
+    min-width: 450px;
+    height: auto;
   }
 
   .ing_card {
