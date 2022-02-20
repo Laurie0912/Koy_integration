@@ -862,7 +862,7 @@ padding: 10px;
   max-width: 270px;
 }
 
-.social-icon a {
+.social-icon {
   height: fit-content;
   background-color: #999999;
   border-radius: 50%;
@@ -871,6 +871,11 @@ padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.social-icon:hover{
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.541);
 }
 
 .social-icon a:hover{
