@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Koy_integration</title>
+    <title>Koy_PageRecette</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -13,16 +13,16 @@
       <nav class="navbar">
         <div class="menu-container">
           <input type="checkbox" class="menu-icone" />
-          <label for="promo">menu</label>
+          <label for="menu-icone">menu</label>
           <span></span>
           <span></span>
           <span></span>
 
           <ul class="menu">
-            <a href="#"><li>Calendier</li></a>
-            <a href="#"><li>Cuisiner</li></a>
-            <a href="#"><li>Restaurant</li></a>
-            <a href="#"><li>Communauté</li></a>
+            <li><a href="#">Calendier</a></li>
+            <li><a href="#">Cuisiner</li></a>
+            <li><a href="#">Restaurant</a></li>
+            <li><a href="#">Communauté</a></li>
           </ul>
         </div>
       </nav>
@@ -122,7 +122,7 @@
         <h2>Bo bun</h2>
 
         <div class="note">
-        <img src="./assets/etoiles.svg" alt="note" width="68px" />
+        <img src="./assets/etoiles.svg" alt="note"  />
         <span>4/5</span>
         </div>
 
@@ -131,6 +131,7 @@
             <img
               src="./assets/bobunimg.jpg"
               srcset="./assets/vid-410.jpg 410w, ./assets/vid-600.jpg 600w"
+              sizes="(min-width:250px) 600px, 410px"
               alt="bobun"
             />
 
@@ -224,7 +225,7 @@
                     />
                   </g>
                   <defs>
-                    <clipPath id="clip0_0_125">
+                    <clipPath id="clip0_0_138">
                       <rect
                         width="25"
                         height="14"
@@ -380,7 +381,7 @@
                 />
               </g>
               <defs>
-                <clipPath id="clip0_0_125">
+                <clipPath id="clip0_0_137">
                   <rect
                     width="25"
                     height="14"
@@ -523,6 +524,7 @@
 
         <div class="ing_container">
           <article class="ing_card">
+            <h3>ingredient</h3>
             <div class="ing_img tomate"></div>
             <div class="quantity">
               <span class="ing_name">Tomate</span>
@@ -531,6 +533,7 @@
           </article>
 
           <article class="ing_card">
+            <h3>ingredient</h3>
             <div class="ing_img menthe"></div>
             <div class="quantity">
               <span class="ing_name">Menthe</span>
@@ -539,6 +542,7 @@
           </article>
 
           <article class="ing_card">
+            <h3>ingredient</h3>
             <div class="ing_img concombre"></div>
             <div class="quantity">
               <span class="ing_name">Concombre</span>
@@ -547,6 +551,7 @@
           </article>
 
           <article class="ing_card">
+            <h3>ingredient</h3>
             <div class="ing_img ciboulette"></div>
             <div class="quantity">
               <span class="ing_name">Ciboulette</span>
@@ -555,6 +560,7 @@
           </article>
 
           <article class="ing_card">
+            <h3>ingredient</h3>
             <div class="ing_img carotte"></div>
             <div class="quantity">
               <span class="ing_name">Carottes</span>
@@ -563,6 +569,7 @@
           </article>
 
           <article class="ing_card">
+            <h3>ingredient</h3>
             <div class="ing_img salade"></div>
             <div class="quantity">
               <span class="ing_name">Salade</span>
@@ -571,6 +578,7 @@
           </article>
 
           <article class="ing_card">
+            <h3>ingredient</h3>
             <div class="ing_img ail"></div>
             <div class="quantity">
               <span class="ing_name">Ail</span>
@@ -579,6 +587,7 @@
           </article>
 
           <article class="ing_card">
+            <h3>ingredient</h3>
             <div class="ing_img cacahuetes"></div>
             <div class="quantity">
               <span class="ing_name">Cacahuètes</span>
@@ -587,6 +596,7 @@
           </article>
 
           <article class="ing_card">
+            <h3>ingredient</h3>
             <div class="ing_img soja"></div>
             <div class="quantity">
               <span class="ing_name">Soja</span>
@@ -595,6 +605,7 @@
           </article>
 
           <article class="ing_card">
+            <h3>ingredient</h3>
             <div class="ing_img steak"></div>
             <div class="quantity">
               <span class="ing_name">Steak</span>
@@ -683,7 +694,7 @@
 
           <div class="social">
             <div class="social-icon instagram">
-              <a href="#">
+              <a href="#"> <span>instagram</span>
                 <svg
                   width="22"
                   height="22"
@@ -701,7 +712,7 @@
               </a>
             </div>
             <div class="social-icon facebook">
-              <a href="#">
+              <a href="#"><span>facebook</span>
                 <svg
                   width="11"
                   height="24"
@@ -716,8 +727,8 @@
                 </svg>
               </a>
             </div>
-            <div class="social-icon">
-              <a href="#">
+            <div class="social-icon tiktok">
+              <a href="#"><span>tiktok</span>
                 <svg
                   width="19"
                   height="22"
@@ -732,8 +743,8 @@
                 </svg>
               </a>
             </div>
-            <div class="social-icon">
-              <a href="#">
+            <div class="social-icon pinterest">
+              <a href="#"> <span>pinterest</span>
                 <svg
                   width="16"
                   height="22"
